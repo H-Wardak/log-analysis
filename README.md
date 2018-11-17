@@ -8,7 +8,7 @@ This project is using News Database containing number of articles and statistics
 
 ## How to Run?
 The database in this project is running PostgreSQL. 
-- Download the data [here][1], unzip it
+- Download the data [here], unzip it
 - the file is called **newsdata.sql** and the database name is **news**
 - load the data into a directory: ```psql -d news -f newsdata.sql ```
 - Run news.py script
@@ -20,4 +20,4 @@ The script contains three main functions to asnwer each of the above question an
 
 
 
-[1]: (https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)
+[here]: (https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)
