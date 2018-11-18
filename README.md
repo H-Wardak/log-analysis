@@ -15,7 +15,7 @@ The database in this project is running PostgreSQL.
 - The result is written in **news_log_output.txt**
 
 ## Implementation
-The script contains three main functions to asnwer each of the above question and write output to a file, plus separate function for connecting and fetching data from database. The queries structured in simple joining and subquery. Question 3 asnwered with using views. Two views are created with names _all\_req_ and _err\_req_ fetching all requests grouped by day and failed requests, respectivily.
+The script contains three main functions to asnwer each of the above question and write output to a file, plus separate function for connecting and fetching data from database.
 
 
 
