@@ -5,15 +5,15 @@ import psycopg2
 # connect to, and fetch result from DB
 # It takes two arguments, DB name and the query
 def get_query_rslt(db_name, query):
-	try:
-	    db = psycopg2.connect('dbname={}'.format(db_name))
-	except psycopg2.Error as e:
-	    print "Unable to connect!"
-	    print e.pgerror
-	    print e.diag.message_detail
-	    sys.exit(1)
-	else:
-	    print("Connected to DB")
+    try:
+        db = psycopg2.connect('dbname={}'.format(db_name))
+    except psycopg2.Error as e:
+        print "Unable to connect!"
+        print e.pgerror
+        print e.diag.message_detail
+        sys.exit(1)
+    else:
+        print("Connected to DB")
         cursor = db.cursor()
         cursor.execute(query)
         output = cursor.fetchall()
@@ -24,7 +24,7 @@ def get_query_rslt(db_name, query):
 def get_top3_articles():
     query = "SELECT title, count FROM articles, \
     (SELECT slug, count(path) AS count FROM articles, log \
-    WHERE log.path = '/article/' || articles.slug GROUP BY slug) AS subq WHERE \
+    WHERE log.path = '/article/' || articles.slug GROUP BY slug) AS subq WHERE\
     articles.slug = subq.slug ORDER BY count DESC LIMIT 3;"
     output = get_query_rslt('news', query)
     f.write("1- What are the most popular three articles of all time?\n")
